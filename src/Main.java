@@ -3,12 +3,16 @@ import java.io.IOException;
 import java.util.Collections;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
-BreakingEnigma breaking = new BreakingEnigma();
-String salt = "ABCDEFGHIJKLM";
+    public static void main(String[] args) throws FileNotFoundException {
+        BreakingEnigma breaking = new BreakingEnigma();
 
-String wordlist = "C:\\Users\\Rafael\\Desktop\\SAD\\wordlist.txt";
-breaking.wordSaltCombined(wordlist);
+        Scanner scanner = new Scanner(new File("src/wordlist.txt"));
+        String wordFile = null;
+        while (scanner.hasNext()) {
+            wordFile = scanner.nextLine();
+        }
+
+        breaking.allCombinations(wordFile);
 
     }
 }
