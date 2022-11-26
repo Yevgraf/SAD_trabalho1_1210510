@@ -32,6 +32,7 @@ public class Main {
             }
         }
         while (error);
+         breaking.plugboard();
     }
 }
 

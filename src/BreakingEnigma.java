@@ -1,4 +1,4 @@
-import java.io.*;
+import java.sql.SQLOutput;
 import java.util.*;
 
 public class BreakingEnigma {
@@ -26,13 +26,15 @@ public class BreakingEnigma {
 //                    System.out.println("------------------------------");
                     saltedWord.add(begMerged);
                     saltedWord.add(endMerged);
-                    System.out.println(saltedWord);
                 }
             }
         return saltedWord;
     }
 
-//    public enhancedCaesar(){
-//
-//    }
+    public void plugboard(){
+        for (int i = 0; i < saltedWord.size(); i++) {
+            String saltW = (saltedWord.get(i));
+        }
+
+    }
 }
