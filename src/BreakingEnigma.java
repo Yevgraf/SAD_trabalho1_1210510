@@ -33,7 +33,8 @@ public class BreakingEnigma {
 
     public void plugboard(){
         for (int i = 0; i < saltedWord.size(); i++) {
-            String saltW = (saltedWord.get(i));
+            String saltW = saltedWord.get(i);
+            System.out.println(saltW);
         }
 
     }
