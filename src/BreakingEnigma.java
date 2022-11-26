@@ -2,10 +2,12 @@ import java.io.*;
 import java.util.*;
 
 public class BreakingEnigma {
+
+    HashMap<String, String> plugboard = new HashMap<String, String>(Map.of("S", "U", "Q", "V", "H", "C", "W", "L", "O", "F", "G", "R", "Z", "P", "J", "X", "T", "B", "A", "D"));
     String[] salt = new String[]{"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"};
     ArrayList<String> saltedWord = new ArrayList<>();
 
-    public ArrayList allCombinations(String wordlist)  {
+    public ArrayList allSaltCombinations(String wordfile)  {
 
 
             for (String word1 : salt
@@ -16,8 +18,8 @@ public class BreakingEnigma {
                 ) {
                     String salted2 = word2;
                     String saltComb = salted + salted2;
-                    String begMerged = saltComb+wordlist;
-                    String endMerged = wordlist+saltComb;
+                    String begMerged = saltComb+wordfile;
+                    String endMerged = wordfile+saltComb;
 //                    System.out.println("Salt: "+ saltComb);
 //                    System.out.println("Salt no inicio: " +begMerged);
 //                    System.out.println("Salt no fim: " + endMerged);
@@ -29,10 +31,8 @@ public class BreakingEnigma {
             }
         return saltedWord;
     }
+
+//    public enhancedCaesar(){
+//
+//    }
 }
-
-
-
-
-
-

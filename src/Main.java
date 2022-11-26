@@ -8,19 +8,30 @@ public class Main {
     public static void main(String[] args) throws FileNotFoundException {
         BreakingEnigma breaking = new BreakingEnigma();
         Scanner read = new Scanner(System.in);
+        boolean error = false;
 
-        //C:\Users\RafaelMagalhães(1210\Documents
         System.out.println("Introduza o caminho para a wordlist");
-        String someUserFile = read.nextLine();
+        do {
+            error = false;
 
-        File file = new File(someUserFile);
-        Scanner inputFile = new Scanner(file);
+            try {
+                error = true;
+                String someUserFile = read.nextLine();
 
-        String wordFile = null;
-        while (inputFile.hasNext()) {
-            wordFile = inputFile.nextLine();
+                File file = new File(someUserFile);
+                Scanner inputFile = new Scanner(file);
+
+                String wordFile = null;
+                while (inputFile.hasNext()) {
+                    wordFile = inputFile.nextLine();
+                    breaking.allSaltCombinations(wordFile);
+                }
+                break;
+            } catch (Exception e) {
+                System.out.println("Introduza input válido");
+            }
         }
-        breaking.allCombinations(wordFile);
-
+        while (error);
     }
 }
+
